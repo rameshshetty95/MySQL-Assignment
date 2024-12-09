@@ -3,14 +3,11 @@
 
 -- 25. Count how many users are active and inactive from the user_activity table.
 
-select count(activity_status)as Active_users 
-from user_logs 
-where activity_status = 'Active';
+select activity_status,count(*)user_count 
+from user_activity 
+group by activity_status;
 
-select count(activity_status)as Inactive_users 
-from user_logs 
-where activity_status = 'Inactive';
- 
+
 -- 26. Using the orders table, calculate the total number of orders placed in the first quarter 
 -- (January to March) of 2023 and 2024. Compare the results to analyze the growth or 
 -- decline in order activity.
